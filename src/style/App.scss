@@ -1,5 +1,7 @@
 // @import "fonts";
-
+$breakpoint-phone: 640px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 body {
 	// background: url(https://images.alphacoders.com/502/502329.jpg) no-repeat center center fixed;
@@ -14,17 +16,37 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   }
-  
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-	  monospace;
-}
+
   
 .App {
+	display: flex;
+	flex-direction: row;
 	position: relative;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
 	font-size: calc(10px + 2vmin);
+		@media (max-width:$breakpoint-tablet){
+			flex-direction: column;
+		}
 	.Slidebar{
-		
+		background-color: #fff;
+
+		img {
+			width:100%;
+			height: auto;
+		}
+		.header{
+			display: flex;
+			justify-content: space-between;
+			margin: 45px 15px 0px 15px;
+		}
+		.body{			
+			margin: 50px;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 19px;
+		}
 	}
 	.Show{
 		display: flex;
@@ -54,6 +76,7 @@ code {
 		flex-direction: column;
 		position: relative;
 		color: #FFFFFF;
+		width:70%;
 		ul{
 			display: flex;
 			position: relative;
