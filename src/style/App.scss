@@ -29,18 +29,32 @@ body {
 		@media (max-width:$breakpoint-tablet){
 			flex-direction: column;
 		}
+		
 	.Home{
 		display: flex;
 		flex-direction: row-reverse;
+		@media (max-width:$breakpoint-tablet){
+			flex-direction: column-reverse;
+		}
 	}
 	.Slidebar{
 		background-color: #fff;
-
+		max-height: 70%;
+		width: 30%;
+		@media (max-width:$breakpoint-tablet){
+			width: 100%;
+			top: 25em;
+			position: relative;
+			top: 25em;
+		}
 		img {
 			width:100%;
 			height: auto;
 		}
 		.header{
+			@media(max-width:$breakpoint-tablet){
+				margin: 5px;
+			}
 			display: flex;
 			justify-content: space-between;
 			margin: 45px 15px 0px 15px;
@@ -48,7 +62,10 @@ body {
 				color: #EFD358;
 			}
 		}
-		.body{			
+		.body{	
+			@media(max-width:$breakpoint-tablet){
+				margin: 10px;
+			}		
 			margin: 50px;
 			font-style: normal;
 			font-weight: normal;
@@ -59,10 +76,17 @@ body {
 		display: flex;
 		flex-direction: column;	
 		position: absolute;
+		color:white;	
 		width: 492px;
 		height: 165px;
 		left: 95px;
 		top: 140px;
+		@media (max-width:$breakpoint-tablet){
+			top:3em;
+			left:0px;
+			width:auto;
+			margin: 10px;
+		}
 		span{
 			font-size: 23px;
 		}
@@ -84,8 +108,12 @@ body {
 		position: relative;
 		color: #FFFFFF;
 		width:70%;
+		@media (max-width:$breakpoint-tablet){
+			width:100%;
+		}
 		ul{
 			display: flex;
+			flex-wrap: wrap;
 			position: relative;
 			top: 25em;
 			width: 100%;
@@ -95,10 +123,16 @@ body {
 			font-weight: bold;
 			font-size: 15px;
 			line-height: 18px;
+			@media (max-width:$breakpoint-tablet){
+				padding-left:0px;
+			}
 			li{
 				list-style-type: none;
 				width: 205px;
 				margin: 10px;
+				@media (max-width:$breakpoint-tablet){
+					width:auto;
+				}
 				.episode{
 					// remove border
 					border: 1px solid white;

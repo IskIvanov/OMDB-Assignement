@@ -11,7 +11,7 @@ export default function Slidebar(props) {
 			
 			<div className="header">
 				<span> {props.episode.Released} </span>
-				<span> <AiFillStar/> {props.episode.imdbRating} </span>
+				<span> <AiFillStar/> <b>{props.episode.imdbRating}</b>/10 </span>
 			</div>
 			<hr/>
 			<div className="body">
