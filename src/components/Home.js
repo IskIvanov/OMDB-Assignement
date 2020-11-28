@@ -10,7 +10,6 @@ import Sidebar from './Sidebar';
 export default function Home(props) {
 	const season = props.season.Episodes
 	const episode = props.episode;
-	const [eNum, setEnum] = useState(6)
 
 	if(season){
 		return (

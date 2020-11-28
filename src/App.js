@@ -32,7 +32,7 @@ function App() {
 
 	return (
 		<div className="App">
-			{/* <Intro info={info}/> */}
+			<Intro info={info}/>
 			<Home episode={episode} season={season}/>
 		</div>
   );
