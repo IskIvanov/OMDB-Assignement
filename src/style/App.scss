@@ -29,6 +29,10 @@ body {
 		@media (max-width:$breakpoint-tablet){
 			flex-direction: column;
 		}
+	.Home{
+		display: flex;
+		flex-direction: row-reverse;
+	}
 	.Slidebar{
 		background-color: #fff;
 
@@ -40,6 +44,9 @@ body {
 			display: flex;
 			justify-content: space-between;
 			margin: 45px 15px 0px 15px;
+			svg{
+				color: #EFD358;
+			}
 		}
 		.body{			
 			margin: 50px;

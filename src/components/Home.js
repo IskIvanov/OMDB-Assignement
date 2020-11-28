@@ -1,75 +1,48 @@
-import React, { useState, useEffect   } from 'react';
-import Show from './Show';
+import React, {useState} from 'react';
 import Episode from './Episode';
-import Whirligig from 'react-whirligig'
+import Sidebar from './Sidebar';
 
-export default function Home() {
-	const [error, setError] = useState(null);
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [series, setSeries] = useState([]);
-	let whirligig;
-	const next = () => whirligig.next();
-	const prev = () => whirligig.prev();
+//TODO: 
+	// Mapping does not work - component renders too many times
+	// Create Carousel/Slider component for the Episodes
+	// After clicking on one episode change the Slider content by passing the props from episode
 
-	// const settings = {
-	// 	dots: true,
-	// 	infinite: true,
-	// 	speed: 500,
-	// 	slidesToShow: 3,
-	// 	slidesToScroll: 3
-	// };
+export default function Home(props) {
+	const season = props.season.Episodes
+	const episode = props.episode;
+	const [eNum, setEnum] = useState(6)
 
-	useEffect(() => {
-	  fetch(`http://www.omdbapi.com/?apikey=e892871a&t=game+of+thrones&Season=1`)
-		.then(res => res.json())
-		.then(
-		  (result) => {
-			setIsLoaded(true);
-			setSeries(result.Episodes);
-		  },
-
-		  (error) => {
-			setIsLoaded(true);
-			setError(error);
-		  }
-		)
-	}, [])
-  
-	if (error) {
-	  return <div>Error: {error.message}</div>;
-	} else if (!isLoaded) {
-	  return <div>Loading...</div>;
-	} else {
-
-	  return (
-		<div className="Episodes">
-			<Show/>
-			<div>
+	if(season){
+		return (
+		<div className="Home">
+			<Sidebar episode={episode} />
+			<div className="Episodes">
 				<ul>
-					<Whirligig
-						visibleSlides={5}
-						gutter="1em"
-						ref={(_whirligigInstance) => { whirligig = _whirligigInstance}}
-					>
-						<li><Episode season={2} episodeNumber={1}/></li>
-						<li><Episode season={2} episodeNumber={2}/></li>
-						<li><Episode season={2} episodeNumber={3}/></li>
-						<li><Episode season={2} episodeNumber={4}/></li>
-						<li><Episode season={2} episodeNumber={5}/></li>
-						<li><Episode season={2} episodeNumber={6}/></li>
-						<li><Episode season={2} episodeNumber={7}/></li>
-						<li><Episode season={2} episodeNumber={8}/></li>
-						<li><Episode season={2} episodeNumber={9}/></li>
-					</Whirligig>	
+					{/* {season.map(x=>{
+						console.log(x.Episode);
+						<li><Episode epNumber={x.Episode}/></li>
+						// <li key={x.Episode}> HI THIS WORKS... I HOPE </li>
+					})} */}
+					{/* Find the number of the episode */}
+					{/* Find the  */}
+					<li><Episode epNumber={1}/></li>
+					<li><Episode epNumber={2}/></li>
+					<li><Episode epNumber={3}/></li>
+					<li><Episode epNumber={4}/></li>
+					<li><Episode epNumber={5}/></li>
+					<li><Episode epNumber={6}/></li>
+					<li><Episode epNumber={7}/></li>
+					<li><Episode epNumber={8}/></li>
+					<li><Episode epNumber={9}/></li>
 				</ul>
 			</div>
-
-			<div className="arrowButtons">
-				<button className="Right" onClick={next}></button>
-				<button className="Left" onClick={prev}></button>
-			</div>
-			
 		</div>
-	  );
+		)
+	}else{
+		return (
+			<div>
+				<h1>Loading...</h1>
+			</div>
+		)
 	}
-  }
+}
