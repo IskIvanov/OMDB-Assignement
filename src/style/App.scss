@@ -1,4 +1,4 @@
-// @import "fonts";
+
 $breakpoint-phone: 640px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
@@ -8,7 +8,7 @@ body {
 	// background-size: cover; 
 	margin: 0;
 	background-color: #282c34;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 23px;
@@ -57,7 +57,7 @@ body {
 			}
 			display: flex;
 			justify-content: space-between;
-			margin: 45px 15px 0px 15px;
+			margin: 25px 20px 30px 20px;
 			svg{
 				color: #EFD358;
 			}
@@ -66,7 +66,7 @@ body {
 			@media(max-width:$breakpoint-tablet){
 				margin: 10px;
 			}		
-			margin: 50px;
+			margin: 35px 25px 35px 25px;
 			font-style: normal;
 			font-weight: normal;
 			font-size: 19px;
@@ -134,9 +134,7 @@ body {
 					width:auto;
 				}
 				.episode{
-					// remove border
-					border: 1px solid white;
-					// remove border
+					position: relative;
 					padding: 10px;
 					font-size: 0.7em;
 					text-align: left;
@@ -147,6 +145,13 @@ body {
 					line-height: 16px;
 					mix-blend-mode: normal;
 					opacity: 0.8;
+					span{
+						color: #000;
+						background-color: #fff;
+						padding: 6px 10px 6px 10px;
+						position: absolute;
+						font-weight: bold;
+					}
 					h3{
 						margin-top:5px;
 						margin-bottom:5px;

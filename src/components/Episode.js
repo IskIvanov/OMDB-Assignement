@@ -9,10 +9,11 @@ export default function Episode(props) {
 		fetchEpisode(props.epNumber).then((x) =>{
 			setEpisode(x);
 		})
-	})
+	},[])
 
 	  return (
 		<div className="episode">
+			<span>{props.epNumber}</span>
 			<img src={episode.Poster} alt='' />
 		  	<h3>{episode.Title}</h3>
 		  	<p>{episode.Plot}</p>
