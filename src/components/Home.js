@@ -23,7 +23,6 @@ export default function Home(props) {
 						// <li key={x.Episode}> HI THIS WORKS... I HOPE </li>
 					})} */}
 					{/* Find the number of the episode */}
-					{/* Find the  */}
 					<li><Episode epNumber={1}/></li>
 					<li><Episode epNumber={2}/></li>
 					<li><Episode epNumber={3}/></li>

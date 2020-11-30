@@ -1,7 +1,7 @@
 
 $breakpoint-phone: 640px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1024px;
+$breakpoint-desktop: 1600px;
 
 body {
 	// background: url(https://images.alphacoders.com/502/502329.jpg) no-repeat center center fixed;
@@ -41,6 +41,9 @@ body {
 		background-color: #fff;
 		max-height: 70%;
 		width: 30%;
+		@media (min-width:$breakpoint-desktop){
+			max-height: 100%;
+		}
 		@media (max-width:$breakpoint-tablet){
 			width: 100%;
 			top: 25em;
@@ -56,6 +59,7 @@ body {
 				margin: 5px;
 			}
 			display: flex;
+			font-size: 18px;
 			justify-content: space-between;
 			margin: 25px 20px 30px 20px;
 			svg{
@@ -70,6 +74,12 @@ body {
 			font-style: normal;
 			font-weight: normal;
 			font-size: 19px;
+			& h3{
+				margin: auto;
+			}
+			& p{
+				margin: auto;
+			}
 		}
 	}
 	.Show{
@@ -87,15 +97,15 @@ body {
 			width:auto;
 			margin: 10px;
 		}
-		span{
+		& span{
 			font-size: 23px;
 		}
-		h3{
+		& h3{
 			margin-top: 0px;
 			margin-bottom: 0px;
 			
 		}
-		p{
+		& p{
 			font-style: normal;
 			font-weight: normal;
 			font-size: 23px;

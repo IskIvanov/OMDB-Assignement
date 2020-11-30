@@ -1,15 +1,28 @@
 import React, { useState, useEffect   } from 'react';
 import {AiFillStar} from 'react-icons/ai';
 
+//TODO:
+
+const dateConvert = (date) =>{
+	let dateConverted;
+	let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+	if(date){
+		dateConverted = date.split(' ');
+		dateConverted.reverse();
+		dateConverted[1]=months.indexOf(dateConverted[1]);
+		return dateConverted.join('-')
+	}else{
+		return date;
+	}
+};
 
 export default function Slidebar(props) {
+
 	const date = props.episode.Released;
 	const rating = props.episode.imdbRating;
-	let month = '';
-	let rate;
 	
-	if(date && rating){
-		month = date.substr(3,3);
+	let rate;
+	if(rating){
 		rate = rating.substr(0,1);
 	}
 
@@ -17,8 +30,8 @@ export default function Slidebar(props) {
 		<div className="Slidebar">
 			<img src={props.episode.Poster} />		
 			<div className="header">
-				{console.log(rate)}
-				<span> {props.episode.Released} </span>
+				<span>Episode {props.episode.Episode} </span>
+				<span> {dateConvert(date)} </span>
 				<span> <AiFillStar/> <b>{rate}</b>/10 </span>
 			</div>
 			<hr/>
